@@ -4,8 +4,8 @@
   "description": "snake game by progfool",
   "main": "index.js",
   "dependencies": {
-    "livereload-js": "^2.3.0",
-    "mustache": "^2.3.0"
+    "handlebars": "^4.0.11",
+    "livereload-js": "^2.3.0"
   },
   "devDependencies": {},
   "scripts": {

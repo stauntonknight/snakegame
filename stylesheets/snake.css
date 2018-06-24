@@ -1,0 +1,6 @@
+.segment-unit {
+    background-color: black;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+}

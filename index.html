@@ -1,10 +1,13 @@
 <html>
     <head> 
         <title> Snake game </title>
+        <script tye="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars.runtime-148b191.js"></script>
+         <link rel="stylesheet" type="text/css" href="stylesheets/snake.css">
     </head>
     <body>
-        Hello world
+        <div id="snake"></div>
         <script type="text/javascript" src="scripts/ui.js"> </script>
+        <script type="text/javascript" src="templates.js"> </script>
         <script type="module">
             import Snake from './models/snake.js';
             var s = new Snake();

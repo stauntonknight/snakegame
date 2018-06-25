@@ -1,6 +1,6 @@
 export const Direction = {
     RIGHT : 0,
-    TOP : 1,
+    UP: 1,
     LEFT: 2,
-    BOTTOM : 3
+    DOWN: 3
 };

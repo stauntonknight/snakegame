@@ -2,5 +2,37 @@
     background-color: black;
     width: 5px;
     height: 5px;
+    position: relative;
+    margin: 0;
+    border: 0;
+    outline: none;
+}
+
+.segment-container {
     position: absolute;
 }
+
+.segment-container.left {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.segment-container.right {
+    display: flex;
+    flex-direction: row;
+}
+
+.segment-container.right {
+    display: flex;
+}
+
+.segment-unit.up {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.segment-unit.up,
+.segment-unit.down {
+    width: 5px;
+}
+

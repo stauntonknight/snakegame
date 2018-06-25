@@ -5,9 +5,22 @@ import { Point } from './point.js';
 export default class Snake {
     constructor() {
         this.segments = [];
-        var st = new Point(4, 0);
-        var end = new Point(0, 0);
-        this.segments.push(Snake.createNewSegment(st, end, Direction.RIGHT));
+        this.segments.push(Snake.createNewSegment(new Point(0, 0), new Point(1, 0), Direction.RIGHT));
+        for (var i = 0 ; i < 39; i++) {
+            this.add(Direction.RIGHT);
+        }
+        for (var i = 0 ; i < 39; i++) {
+            this.add(Direction.DOWN);
+        }
+        for (var i = 0 ; i < 39; i++) {
+            this.add(Direction.LEFT);
+        }
+        for (var i = 0 ; i < 39; i++) {
+            this.add(Direction.UP);
+        }
+        for (var i = 0 ; i < 39; i++) {
+            this.add(Direction.RIGHT);
+        }
     }
 
     handleDirectionChange(d) {
@@ -48,7 +61,25 @@ export default class Snake {
         this.segments[segments.length - 1].move();
     }
 
+    add(d) {
+        var _dx = Snake.dx[d];
+        var _dy = Snake.dy[d];
+        var seg;
+        var lastSeg = this.segments[this.segments.length - 1];
+        if (lastSeg.currentDirection == d) {
+            seg = lastSeg;
+        } else {
+            lastSeg = Snake.createNewSegment(lastSeg.e.clone(), lastSeg.e.clone(), d);
+            this.segments.push(lastSeg);
+        }
+        lastSeg.e.x += _dx;
+        lastSeg.e.y += _dy;
+    }
+
     static createNewSegment(x, y, d) {
         return new Segment(x, y, d);
     }
 }
+
+Snake.dx = [1, 0, -1, 0];
+Snake.dy = [0, -1, 0, 1];

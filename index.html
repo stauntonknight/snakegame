@@ -2,6 +2,7 @@
     <head> 
         <title> Snake game </title>
         <script tye="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars.runtime-148b191.js"></script>
+        <script tye="text/javascript" src="./node_modules/mousetrap/mousetrap.min.js"></script>
          <link rel="stylesheet" type="text/css" href="stylesheets/snake.css">
     </head>
     <body>
@@ -12,6 +13,10 @@
             import Snake from './models/snake.js';
             var s = new Snake();
             renderSnake(s);
+            Mousetrap.bind('left', () => {s.add(2); renderSnake(s);});
+            Mousetrap.bind('right', () => {s.add(0); renderSnake(s);});
+            Mousetrap.bind('down', () => {s.add(3); renderSnake(s);});
+            Mousetrap.bind('up', () => {s.add(1); renderSnake(s);});
         </script>
     </body>
 </html>

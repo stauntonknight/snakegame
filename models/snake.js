@@ -6,21 +6,6 @@ export default class Snake {
     constructor() {
         this.segments = [];
         this.segments.push(Snake.createNewSegment(new Point(0, 0), new Point(1, 0), Direction.RIGHT));
-        for (var i = 0 ; i < 39; i++) {
-            this.add(Direction.RIGHT);
-        }
-        for (var i = 0 ; i < 39; i++) {
-            this.add(Direction.DOWN);
-        }
-        for (var i = 0 ; i < 39; i++) {
-            this.add(Direction.LEFT);
-        }
-        for (var i = 0 ; i < 39; i++) {
-            this.add(Direction.UP);
-        }
-        for (var i = 0 ; i < 39; i++) {
-            this.add(Direction.RIGHT);
-        }
     }
 
     handleDirectionChange(d) {
@@ -62,6 +47,7 @@ export default class Snake {
     }
 
     add(d) {
+        console.log('called add' + d);
         var _dx = Snake.dx[d];
         var _dy = Snake.dy[d];
         var seg;

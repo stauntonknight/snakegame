@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "handlebars": "^4.0.11",
+    "handlebars-loop": "^1.0.3",
     "livereload-js": "^2.3.0",
     "mousetrap": "^1.6.2"
   },
